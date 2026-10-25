@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -7,24 +7,28 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0d1117;color:#e6edf3;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:940px;margin:0 auto;padding:44px 20px 60px}
+.wrap{max-width:980px;margin:0 auto;padding:44px 20px 60px}
 h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
 .sub{margin-top:8px;font-size:13px;color:#7d8590}
 .sub b{color:#58a6ff;font-weight:600}
 .head{margin-bottom:28px}
 .list{display:flex;flex-direction:column;gap:10px}
-.row{position:relative;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr) 96px 168px auto;align-items:center;gap:16px;padding:14px 18px;background:#161b22;border:1px solid #21262d;border-radius:12px;transition:background .15s,border-color .15s,transform .15s}
+.row{position:relative;cursor:pointer;display:grid;grid-template-columns:26px 44px minmax(0,1fr) 92px 158px auto;align-items:center;gap:14px;padding:12px 18px;background:#161b22;border:1px solid #21262d;border-radius:12px;transition:background .15s,border-color .15s,transform .15s}
 .row:hover{background:#1c2128;border-color:#30363d;transform:translateX(2px)}
-.rank{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;background:#21262d;color:#8b949e;font-variant-numeric:tabular-nums}
+.rank{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:#21262d;color:#8b949e;font-variant-numeric:tabular-nums}
 .row:nth-child(1) .rank{background:linear-gradient(135deg,#d4a017,#f0c75e);color:#241a00}
 .row:nth-child(2) .rank{background:linear-gradient(135deg,#8e9aa6,#c6d0d9);color:#1a1f24}
 .row:nth-child(3) .rank{background:linear-gradient(135deg,#a0622d,#cd8b52);color:#20120a}
+.logo{width:44px;height:44px;border-radius:9px;object-fit:cover;background:#21262d;border:1px solid #30363d;display:block}
+.row:nth-child(1) .logo{border-color:#d4a017}
+.row:nth-child(2) .logo{border-color:#8e9aa6}
+.row:nth-child(3) .logo{border-color:#cd8b52}
 .team{text-decoration:none;color:inherit;min-width:0}
 .team::after{content:"";position:absolute;inset:0;z-index:1;border-radius:12px}
 .team b{display:block;font-size:15.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .team em{display:block;font-style:normal;font-size:11.5px;color:#7d8590;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .team:hover b{color:#58a6ff}
-.time{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:25px;font-weight:700;color:#58a6ff;text-align:right;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.time{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:24px;font-weight:700;color:#58a6ff;text-align:right;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .time i{font-style:normal;font-size:13px;color:#7d8590;margin-left:1px;font-weight:500}
 .meta{display:flex;flex-direction:column;gap:4px;align-items:flex-start}
 .chip{font-size:10.5px;padding:2px 8px;border-radius:20px;background:rgba(31,111,235,.12);color:#79c0ff;border:1px solid rgba(31,111,235,.3);white-space:nowrap}
@@ -36,14 +40,15 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
 .btn.ig{background:#7a3ba8;color:#fff}
 .foot{margin-top:30px;padding-top:18px;border-top:1px solid #21262d;font-size:12px;color:#6e7681;line-height:1.9}
 .foot b{color:#8b949e;font-weight:600}
-@media(max-width:760px){
+@media(max-width:820px){
  .wrap{padding:26px 14px 44px}
  h1{font-size:20px}
- .row{grid-template-columns:32px minmax(0,1fr) auto;gap:12px;padding:13px 14px}
- .rank{width:28px;height:28px;font-size:12px}
+ .row{grid-template-columns:40px minmax(0,1fr) auto;gap:12px;padding:12px 14px}
+ .rank{display:none}
  .meta{display:none}
+ .logo{width:40px;height:40px}
  .time{font-size:20px}
- .acts{grid-column:1/-1;margin-top:4px}
+ .acts{grid-column:1/-1;margin-top:2px}
  .btn{flex:1;text-align:center;padding:9px}
 }
 </style>
@@ -57,6 +62,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   <div class="list">
   <div class="row">
     <div class="rank">1</div>
+    <img class="logo" src="logos/scuderia-pegasus.webp" alt="Scuderia PEGASUS" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sgy3zMzCOks&t=10135s" target="_blank" rel="noopener"><b>Scuderia PEGASUS</b><em>Brazil</em></a>
     <div class="time">1.023<i>s</i></div>
     <div class="meta"><span class="chip">Knockout Competition</span><span class="spd">22.19 km/h</span></div>
@@ -67,6 +73,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">2</div>
+    <img class="logo" src="logos/quasar.webp" alt="Quasar" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sW3uzEnuwHM&t=20285s" target="_blank" rel="noopener"><b>Quasar</b><em>Hong Kong</em></a>
     <div class="time">1.025<i>s</i></div>
     <div class="meta"><span class="chip">Racing Session 3&4</span><span class="spd">22.23 km/h</span></div>
@@ -77,6 +84,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">3</div>
+    <img class="logo" src="logos/marrucho-s-racing-team.webp" alt="Marrucho's Racing Team" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sW3uzEnuwHM&t=22332s" target="_blank" rel="noopener"><b>Marrucho's Racing Team</b><em>Spain</em></a>
     <div class="time">1.026<i>s</i></div>
     <div class="meta"><span class="chip">Racing Session 3&4</span><span class="spd">22.23 km/h</span></div>
@@ -87,6 +95,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">4</div>
+    <img class="logo" src="logos/baltic-evolution.webp" alt="Baltic Evolution" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sW3uzEnuwHM&t=3083s" target="_blank" rel="noopener"><b>Baltic Evolution</b><em>Germany</em></a>
     <div class="time">1.026<i>s</i></div>
     <div class="meta"><span class="chip">Racing Session 3&4</span><span class="spd">22.3 km/h</span></div>
@@ -97,6 +106,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">5</div>
+    <img class="logo" src="logos/springt-racing.webp" alt="Springt Racing" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sgy3zMzCOks&t=3733s" target="_blank" rel="noopener"><b>Springt Racing</b><em>China</em></a>
     <div class="time">1.028<i>s</i></div>
     <div class="meta"><span class="chip">Knockout Competition</span><span class="spd">22.12 km/h</span></div>
@@ -107,6 +117,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">6</div>
+    <img class="logo" src="logos/aixplosion.webp" alt="aiXplosion" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sW3uzEnuwHM&t=29399s" target="_blank" rel="noopener"><b>aiXplosion</b><em>Germany</em></a>
     <div class="time">1.028<i>s</i></div>
     <div class="meta"><span class="chip">Racing Session 3&4</span><span class="spd">22.33 km/h</span></div>
@@ -117,6 +128,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">7</div>
+    <img class="logo" src="logos/baz-racing.webp" alt="BAZ RACING" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sgy3zMzCOks&t=8562s" target="_blank" rel="noopener"><b>BAZ RACING</b><em>Saudi Arabia</em></a>
     <div class="time">1.033<i>s</i></div>
     <div class="meta"><span class="chip">Knockout Competition</span><span class="spd">21.95 km/h</span></div>
@@ -127,6 +139,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">8</div>
+    <img class="logo" src="logos/aeros-racing.webp" alt="Aeros Racing" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sW3uzEnuwHM&t=11731s" target="_blank" rel="noopener"><b>Aeros Racing</b><em>United States of America</em></a>
     <div class="time">1.035<i>s</i></div>
     <div class="meta"><span class="chip">Racing Session 3&4</span><span class="spd">21.88 km/h</span></div>
@@ -137,6 +150,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">9</div>
+    <img class="logo" src="logos/owla.webp" alt="OWLA" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sW3uzEnuwHM&t=32437s" target="_blank" rel="noopener"><b>OWLA</b><em>Spain</em></a>
     <div class="time">1.036<i>s</i></div>
     <div class="meta"><span class="chip">Racing Session 3&4</span><span class="spd">21.98 km/h</span></div>
@@ -147,6 +161,7 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   </div>
   <div class="row">
     <div class="rank">10</div>
+    <img class="logo" src="logos/proioxis.webp" alt="Proioxis" width="44" height="44" loading="lazy">
     <a class="team" href="https://www.youtube.com/watch?v=sgy3zMzCOks&t=4289s" target="_blank" rel="noopener"><b>Proioxis</b><em>Italy</em></a>
     <div class="time">1.037<i>s</i></div>
     <div class="meta"><span class="chip">Knockout Competition</span><span class="spd">22.48 km/h</span></div>
@@ -160,9 +175,10 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
   <div class="foot">
     <b>最快圈</b> = 纯车过线时间（不含反应时间），圈速越小越快。<br>
     <b>YouTube</b> 链接用的是该队「车最快那一次」的录像时间点，不是总成绩最好那次 —— OWLA / Baltic Evolution / aiXplosion 三者不在同一场。<br>
-    <b>数据源</b> offthetrack.net 官方 results.json；IG 取自赛事官网各队主页。<br>
+    <b>数据源</b> offthetrack.net 官方 results.json；队徽取自赛事官网各队主页；IG 取自赛事官网各队主页。<br>
     <b>原 txt 第 6 位是空的</b> —— 漏掉的是 Marrucho's Racing Team (Spain, 1.026s)，已补回。
   </div>
 </div>
 </body>
 </html>
+
